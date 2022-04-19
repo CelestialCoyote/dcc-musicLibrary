@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from './Components/NavigationBar/NavigatonBar';
+import TitleBar from './Components/TitleBar/TitleBar';
 import SearchBar from './Components/SearchBar/SearchBar';
 import MusicTable from './Components/MusicTable/MusicTable';
 import './App.css';
@@ -25,11 +26,20 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
 
-      <NavigationBar />
-      <SearchBar />
-      <MusicTable mediaData={songs} />
+      <div id='main-container'>
+        <div style={{width: '100%'}}>
+          <TitleBar />
+        </div>
+
+        <div className='centered'>
+          <SearchBar />
+          <MusicTable mediaData={songs} />
+        </div>
+       
+      </div>
+      
     </div>
   );
 }
