@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/************************************************
+*
+* Non create-react-app css starts here.
+*
+************************************************/
+
+/***********************
+* SearchBar component.
+***********************/
+
+#search-bar {
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.0em;
+  margin-top: 1.0em;
+  padding: 0.5em;
+}

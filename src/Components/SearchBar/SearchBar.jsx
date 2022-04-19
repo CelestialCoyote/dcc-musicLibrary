@@ -1,13 +1,12 @@
 import React from 'react';
-//import Post from '../Post/Post';
 
 
 const SearchBar = (props) => {
     return (
 
-        <div>
-            <label>Search</label>
-            <input placeholder='search text'></input>
+        <div id='search-bar'>
+            <label>Find Song</label>
+            <input placeholder='Search by: Song Title, Ablum Name, Artist or Group Name, or Release Date'></input>
             <button>Search</button>
         </div>
 
