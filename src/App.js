@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import NavigationBar from './Components/NavigationBar/NavigatonBar';
 import './App.css';
 
 
@@ -20,6 +21,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <NavigationBar />
       <h1>Hello Tikaa</h1>
     </div>
   );
