@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from './Components/NavigationBar/NavigatonBar';
+import SearchBar from './Components/SearchBar/SearchBar';
 import './App.css';
 
 
@@ -23,7 +24,7 @@ function App() {
     <div className="App">
 
       <NavigationBar />
-      <h1>Hello Tikaa</h1>
+      <SearchBar />
     </div>
   );
 }
