@@ -1,6 +1,6 @@
 const MusicTable = (props) => {
     return ( 
-        <table className="table">
+        <table className='styled-table'>
             <thead>
                 <tr>
                     <th>#</th>
