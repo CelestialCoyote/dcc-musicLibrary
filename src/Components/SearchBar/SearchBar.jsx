@@ -8,9 +8,11 @@ const SearchBar = (props) => {
     let handleSearch = (event) => {
         let searchStr = textInput.current.value;
         let foundMedia = props.mediaData.filter(function (potentialMatch) {
-            //x.title.toLowerCase().includes(searchStr.toLowerCase())
-            //if (potentialMatch.album === textInput.current.value) {
-            if (potentialMatch.album.toLowerCase().includes(searchStr.toLowerCase())) {
+            if (potentialMatch.title.toLowerCase().includes(searchStr.toLowerCase()) ||
+                potentialMatch.album.toLowerCase().includes(searchStr.toLowerCase()) ||
+                potentialMatch.artist.toLowerCase().includes(searchStr.toLowerCase()) ||
+                potentialMatch.genre.toLowerCase().includes(searchStr.toLowerCase()) ||
+                potentialMatch.releaseDate.toLowerCase().includes(searchStr.toLowerCase())) {
                 return true;
             }
             else {
