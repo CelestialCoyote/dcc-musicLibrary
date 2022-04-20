@@ -34,7 +34,7 @@ function App() {
         </div>
 
         <div className='centered'>
-          <SearchBar />
+          <SearchBar mediaData={songs} />
           <MusicTable mediaData={songs} />
         </div>
        
