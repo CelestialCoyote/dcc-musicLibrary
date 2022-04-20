@@ -80,14 +80,15 @@ code {
 }
 
 #search-label {
-  background-color: lightgray;
+  background-color: yellow;
   color: red;
-  font-weight: 500;
+  font-weight: bold;
   padding-top: 0.15em;
   width: 6.0em;
 }
 
 #search-input {
+  background-color: yellow;
   margin-left: 1.0em;
   margin-right: 1.0em;
   width: 80%;
@@ -97,6 +98,7 @@ code {
   background-color: red;
   border-radius: 0.5em;
   color: yellow;
+  font-weight: bold;
 }
 
 
