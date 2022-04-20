@@ -29,6 +29,7 @@ const MusicTable = (props) => {
             </tbody>
         </table>
     );
-}
+};
  
+
 export default MusicTable;

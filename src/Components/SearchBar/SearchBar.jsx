@@ -7,7 +7,7 @@ const SearchBar = (props) => {
 
     const startSearch = () => {
         props.handleSearch(searchString.current.value);
-    }
+    };
 
     return (
 
@@ -19,7 +19,7 @@ const SearchBar = (props) => {
         </div>
 
     );
-}
+};
 
 
 export default SearchBar;

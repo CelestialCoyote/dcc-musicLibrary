@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Update MusicTable after SearchBar returns new array.
-    createSongTable();
+    //createSongTable();
   }, [songs]);
 
   const makeGetLibraryRequest = async() => {
@@ -27,10 +27,13 @@ function App() {
     } catch(err) {
       console.log(err.message);
     }
-  }
+  };
 
   const handleSearch = (searchString) => {
-    let foundMedia = songs.filter((potentialMatch) => {
+    if(searchString === '') {
+      makeGetLibraryRequest();
+    } else {
+      let foundMedia = songs.filter((potentialMatch) => {
         if (potentialMatch.title.toLowerCase().includes(searchString.toLowerCase()) ||
             potentialMatch.album.toLowerCase().includes(searchString.toLowerCase()) ||
             potentialMatch.artist.toLowerCase().includes(searchString.toLowerCase()) ||
@@ -41,15 +44,16 @@ function App() {
         else {
             return false;
         }
-    });
+      });
 
-    console.log(foundMedia);
-    return setSongs(foundMedia);
-}
+      console.log(foundMedia);
+      return setSongs(foundMedia);
+    }
+  };
   
   const createSongTable = (songs) => {
 
-  }
+  };
 
   return (
     <div className='App'>
@@ -68,7 +72,7 @@ function App() {
       
     </div>
   );
-}
+};
 
 
 export default App;
