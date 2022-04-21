@@ -14,11 +14,6 @@ function App() {
         makeGetLibraryRequest();
     }, []);
 
-    //useEffect(() => {
-    //  // Update MusicTable after SearchBar returns new array.
-    //  //createSongTable();
-    //}, [songs]);
-
     const makeGetLibraryRequest = async () => {
         try {
             let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
@@ -53,13 +48,9 @@ function App() {
 
     const handleRemove = (id) => {
         const newSongs = songs.filter((song) => song.id !== id);
-     
-        setSongs(newSongs);
-      };
 
-    //  const createSongTable = (songs) => {
-    //
-    //  };
+        setSongs(newSongs);
+    };
 
     return (
 
