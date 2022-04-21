@@ -1,4 +1,9 @@
 const MusicTable = (props) => {
+
+    const deleteSong = (id) => {
+        console.log(`Delete song ${id} button clicked.`);
+    }
+
     return (
 
         <table className='styled-table'>
@@ -10,7 +15,7 @@ const MusicTable = (props) => {
                     <th>Artist /<br></br>Group</th>
                     <th>Genre</th>
                     <th>Release<br></br>Date</th>
-                    <th>Database<br></br>ID#</th>
+                    <th>Delete<br></br>Song</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,13 +28,13 @@ const MusicTable = (props) => {
                             <td>{entry.artist}</td>
                             <td>{entry.genre}</td>
                             <td>{entry.releaseDate}</td>
-                            <td>{entry.id}</td>
+                            <td><button className='delete-button' onClick={() => deleteSong(entry.id)}>Delete</button></td>
                         </tr>
                     );
                 })}
             </tbody>
         </table>
-        
+
     );
 };
 

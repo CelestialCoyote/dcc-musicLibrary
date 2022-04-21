@@ -94,11 +94,12 @@ code {
     width: 80%;
 }
 
-#search-button {
-    background-color: red;
+#add-button {
+    background-color: green;
     border-radius: 0.5em;
     color: yellow;
     font-weight: bold;
+    width: 7.0em;
 }
 
 
@@ -132,4 +133,12 @@ code {
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid yellow;
+}
+
+.delete-button {
+    background-color: red;
+    border-radius: 0.5em;
+    color: yellow;
+    font-weight: bold;
+    width: 5.0em;
 }

@@ -51,6 +51,12 @@ function App() {
         }
     };
 
+    const handleRemove = (id) => {
+        const newSongs = songs.filter((song) => song.id !== id);
+     
+        setSongs(newSongs);
+      };
+
     //  const createSongTable = (songs) => {
     //
     //  };
