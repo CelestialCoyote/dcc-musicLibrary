@@ -8,70 +8,72 @@ import './App.css';
 
 function App() {
 
-  const [songs, setSongs] = useState([]);
+    const [songs, setSongs] = useState([]);
 
-  useEffect(() => {
-    makeGetLibraryRequest();
-  }, []);
+    useEffect(() => {
+        makeGetLibraryRequest();
+    }, []);
 
-  useEffect(() => {
-    // Update MusicTable after SearchBar returns new array.
-    //createSongTable();
-  }, [songs]);
+    //useEffect(() => {
+    //  // Update MusicTable after SearchBar returns new array.
+    //  //createSongTable();
+    //}, [songs]);
 
-  const makeGetLibraryRequest = async() => {
-    try {
-      let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
-      setSongs(response.data);
-      console.log(response.data);
-    } catch(err) {
-      console.log(err.message);
-    }
-  };
-
-  const handleSearch = (searchString) => {
-    if(searchString === '') {
-      makeGetLibraryRequest();
-    } else {
-      let foundMedia = songs.filter((potentialMatch) => {
-        if (potentialMatch.title.toLowerCase().includes(searchString.toLowerCase()) ||
-            potentialMatch.album.toLowerCase().includes(searchString.toLowerCase()) ||
-            potentialMatch.artist.toLowerCase().includes(searchString.toLowerCase()) ||
-            potentialMatch.genre.toLowerCase().includes(searchString.toLowerCase()) ||
-            potentialMatch.releaseDate.toLowerCase().includes(searchString.toLowerCase())) {
-            return true;
+    const makeGetLibraryRequest = async () => {
+        try {
+            let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
+            setSongs(response.data);
+            console.log(response.data);
+        } catch (err) {
+            console.log(err.message);
         }
-        else {
-            return false;
+    };
+
+    const handleSearch = (searchString) => {
+        if (searchString === '') {
+            makeGetLibraryRequest();
+        } else {
+            let foundMedia = songs.filter((potentialMatch) => {
+                if (potentialMatch.title.toLowerCase().includes(searchString.toLowerCase()) ||
+                    potentialMatch.album.toLowerCase().includes(searchString.toLowerCase()) ||
+                    potentialMatch.artist.toLowerCase().includes(searchString.toLowerCase()) ||
+                    potentialMatch.genre.toLowerCase().includes(searchString.toLowerCase()) ||
+                    potentialMatch.releaseDate.toLowerCase().includes(searchString.toLowerCase())) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            });
+
+            console.log(foundMedia);
+            return setSongs(foundMedia);
         }
-      });
+    };
 
-      console.log(foundMedia);
-      return setSongs(foundMedia);
-    }
-  };
-  
-  const createSongTable = (songs) => {
+    //  const createSongTable = (songs) => {
+    //
+    //  };
 
-  };
+    return (
 
-  return (
-    <div className='App'>
+        <div className='App'>
 
-      <div id='main-container'>
-        <div style={{width: '100%'}}>
-          <TitleBar />
+            <div id='main-container'>
+                <div style={{ width: '100%' }}>
+                    <TitleBar />
+                </div>
+
+                <div className='centered'>
+                    <SearchBar handleSearch={handleSearch} />
+                    <MusicTable mediaData={songs} />
+                </div>
+
+            </div>
+
         </div>
+    );
 
-        <div className='centered'>
-          <SearchBar handleSearch={handleSearch} />
-          <MusicTable mediaData={songs} />
-        </div>
-       
-      </div>
-      
-    </div>
-  );
 };
 
 

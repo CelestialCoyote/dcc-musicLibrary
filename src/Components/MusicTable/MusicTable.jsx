@@ -1,5 +1,6 @@
 const MusicTable = (props) => {
-    return ( 
+    return (
+
         <table className='styled-table'>
             <thead>
                 <tr>
@@ -28,8 +29,9 @@ const MusicTable = (props) => {
                 })}
             </tbody>
         </table>
+        
     );
 };
- 
+
 
 export default MusicTable;
