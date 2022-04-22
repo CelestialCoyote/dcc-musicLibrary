@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, Button, Row, Col } from "react-bootstrap";
 import EditLibrary from '../EditLibrary/EditLibrary';
 
 
@@ -31,14 +32,27 @@ const SearchBar = (props) => {
             {isOpen && < EditLibrary
                 content={<>
                     <b>Add Song:</b>
-                    <p></p>
-                    <button>Add to Library</button>
+                    <Form>
+                        <Form.Group className='mb-3' controlId="formBasicEmail">
+                            <Row>
+                                <Col>
+                                    <Form.Label>Song Title:</Form.Label>
+                                </Col>
+                                <Col>
+                                    <Form.Control type="text" placeholder="Song Title" />
+                                </Col>
+                            </Row>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Album Title</Form.Label>
+                            <Form.Control type='text' placeholder='Album Title' />
+                        </Form.Group>
+                        <Button type='submit'>Add to Library</Button>
+                    </Form>
                 </>}
                 handleClose={togglePopup}
-            />}
-
-            <div>
-            </div>
+            />};
         </div>
 
     );

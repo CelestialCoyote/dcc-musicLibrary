@@ -11,7 +11,7 @@ const MusicTable = (props) => {
                 <tr>
                     <th>#</th>
                     <th>Song<br></br>Title</th>
-                    <th>Album<br></br>Name</th>
+                    <th>Album<br></br>Title</th>
                     <th>Artist /<br></br>Group</th>
                     <th>Genre</th>
                     <th>Release<br></br>Date</th>
