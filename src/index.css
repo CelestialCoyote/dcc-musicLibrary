@@ -45,10 +45,10 @@ code {
 ***********************/
 
 #title-bar {
+    align-items: center;
     background: rgb(119, 0, 255);
     background: linear-gradient(90deg, rgba(119, 0, 255, 1) 0%, rgba(255, 136, 0, 1) 50%, rgba(255, 255, 0, 1) 100%);
     display: flex;
-    align-items: center;
     height: 4.0em;
     justify-content: center;
     width: 100%;
@@ -91,59 +91,7 @@ code {
     background-color: yellow;
     margin-left: 1.0em;
     margin-right: 1.0em;
-    width: 80%;
-}
-
-#add-button {
-    background-color: green;
-    border-radius: 0.5em;
-    color: yellow;
-    font-weight: bold;
-    width: 7.0em;
-}
-
-
-/***********************
-* Add Song popup box.
-***********************/
-
-.popup-box {
-    background-color: black;
-    position: fixed;
     width: 100%;
-    height: 250vh;
-    top: 0;
-    left: 0;
-}
-
-.box {
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
-    height: auto;
-    max-height: 70vh;
-    margin-top: calc(100vh - 85vh - 20px);
-    background: lightgreen;
-    border-radius: 4px;
-    padding: 20px;
-    border: 1px solid #999;
-    overflow: auto;
-}
-
-.close-icon {
-    content: 'x';
-    cursor: pointer;
-    position: fixed;
-    right: calc(15% - 30px);
-    top: calc(100vh - 85vh - 33px);
-    background: #ededed;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    line-height: 20px;
-    text-align: center;
-    border: 1px solid #999;
-    font-size: 20px;
 }
 
 

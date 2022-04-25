@@ -1,18 +1,4 @@
-import axios from 'axios';
-
-
 const MusicTable = (props) => {
-
-    //const handleDeleteSong = async (id) => {
-    //    try {
-    //        let response = await axios.delete(`http://localhost:5005/api/songs/${id}`);
-    //        
-    //        console.log(response.data);
-    //    } catch (err) {
-    //        console.log(err.message);
-    //    }
-    //    console.log(`Delete song ${id} button clicked.`);
-    //}
 
     return (
 
@@ -38,7 +24,10 @@ const MusicTable = (props) => {
                             <td>{entry.artist}</td>
                             <td>{entry.genre}</td>
                             <td>{entry.releaseDate}</td>
-                            <td><button className='delete-button' onClick={() => props.handleDeleteSong(entry.id)}>Delete</button></td>
+                            <td><button
+                                className='delete-button'
+                                onClick={() => props.handleDeleteSong(entry.id)}
+                            >Delete</button></td>
                         </tr>
                     );
                 })}
