@@ -44,36 +44,30 @@ function App() {
                 }
             });
 
-            console.log(foundMedia);
             return setSongs(foundMedia);
         }
     };
 
     const handleAddSong = async (newSong) => {
         try {
-            let response = await axios.post(`http://localhost:5005/api/songs/`, newSong)
+            await axios.post(`http://localhost:5005/api/songs/`, newSong)
                 .then((response) => {
-                    //setSongs(response.data);
-                    console.log(response.data);
+                    makeGetLibraryRequest();
                 });
         } catch (err) {
             console.log(err.message);
         }
-        console.log(`New song button clicked.`);
     };
 
     const handleDeleteSong = async (id) => {
         try {
-            let response = await axios.delete(`http://localhost:5005/api/songs/${id}`)
+            await axios.delete(`http://localhost:5005/api/songs/${id}`)
                 .then((response)=> {
                     setSongs(response.data);
                 });
-            
-            console.log(response.data);
         } catch (err) {
             console.log(err.message);
         }
-        console.log(`Delete song ${id} button clicked.`);
     }
 
     return (

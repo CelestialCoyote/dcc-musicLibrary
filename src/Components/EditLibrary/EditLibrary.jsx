@@ -39,6 +39,13 @@ const EditLibrary = (props) => {
             releaseDate
         }
         props.handleAddSong(newSong);
+
+        // Reset input boxes to empty strings.
+        setTitle('');
+        setArtist('');
+        setAlbum('');
+        setGenre('');
+        setReleaseDate('');
     }
 
     return (
@@ -73,8 +80,7 @@ const EditLibrary = (props) => {
                     value={genre}
                     />
                 <input
-                    id='song-release-date' className='add-song-input'
-                    placeholder='Release Date mm/dd/yyyy' type='text'
+                    id='song-release-date' className='add-song-input' type='date'
                     onChange={(event) => setReleaseDate(event.target.value)}
                     value={releaseDate}
                 />
