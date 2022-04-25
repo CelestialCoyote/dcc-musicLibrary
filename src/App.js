@@ -14,9 +14,15 @@ function App() {
         makeGetLibraryRequest();
     }, []);
 
+    useEffect(() => {
+        //makeGetLibraryRequest();
+    }, [songs]);
+
     const makeGetLibraryRequest = async () => {
         try {
-            let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
+            //let response = await axios.get('http://www.devcodecampmusiclibrary.com/api/music');
+            let response = await axios.get('http://localhost:5005/api/songs');
+            
             setSongs(response.data);
             console.log(response.data);
         } catch (err) {
@@ -46,11 +52,18 @@ function App() {
         }
     };
 
-    const handleRemove = (id) => {
-        const newSongs = songs.filter((song) => song.id !== id);
-
-        setSongs(newSongs);
-    };
+    const handleDeleteSong = async (id) => {
+        try {
+            let response = await axios.delete(`http://localhost:5005/api/songs/${id}`).then((response)=> {
+                setSongs(response.data);
+            });
+            
+            console.log(response.data);
+        } catch (err) {
+            console.log(err.message);
+        }
+        console.log(`Delete song ${id} button clicked.`);
+    }
 
     return (
 
@@ -63,7 +76,7 @@ function App() {
 
                 <div className='centered'>
                     <SearchBar handleSearch={handleSearch} />
-                    <MusicTable mediaData={songs} />
+                    <MusicTable mediaData={songs} handleDeleteSong={handleDeleteSong} />
                 </div>
 
             </div>
