@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TitleBar from './Components/TitleBar/TitleBar';
 import SearchBar from './Components/SearchBar/SearchBar';
+import EditLibrary from './Components/EditLibrary/EditLibrary';
 import MusicTable from './Components/MusicTable/MusicTable';
 import './App.css';
 
@@ -13,10 +14,6 @@ function App() {
     useEffect(() => {
         makeGetLibraryRequest();
     }, []);
-
-    useEffect(() => {
-        //makeGetLibraryRequest();
-    }, [songs]);
 
     const makeGetLibraryRequest = async () => {
         try {
@@ -52,11 +49,25 @@ function App() {
         }
     };
 
+    const handleAddSong = async (newSong) => {
+        try {
+            let response = await axios.post(`http://localhost:5005/api/songs/`, newSong)
+                .then((response) => {
+                    //setSongs(response.data);
+                    console.log(response.data);
+                });
+        } catch (err) {
+            console.log(err.message);
+        }
+        console.log(`New song button clicked.`);
+    };
+
     const handleDeleteSong = async (id) => {
         try {
-            let response = await axios.delete(`http://localhost:5005/api/songs/${id}`).then((response)=> {
-                setSongs(response.data);
-            });
+            let response = await axios.delete(`http://localhost:5005/api/songs/${id}`)
+                .then((response)=> {
+                    setSongs(response.data);
+                });
             
             console.log(response.data);
         } catch (err) {
@@ -76,6 +87,7 @@ function App() {
 
                 <div className='centered'>
                     <SearchBar handleSearch={handleSearch} />
+                    <EditLibrary handleAddSong={handleAddSong} />
                     <MusicTable mediaData={songs} handleDeleteSong={handleDeleteSong} />
                 </div>
 
