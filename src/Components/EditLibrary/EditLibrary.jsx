@@ -3,25 +3,6 @@ import React, { useState } from 'react';
 
 const EditLibrary = (props) => {
 
-//    const [songTitle, setSongTitle] = useState('');
-//    const [songArtist, setSongArtist] = useState('');
-//    const [songAlbum, setSongAlbum] = useState('');
-//    const [songGenre, setSongGenre] = useState('');
-//    const [songReleaseDate, setSongReleaseDate] = useState('');
-//
-//    const handleSubmit = (formEvent) => {
-//        formEvent.preventDefault();
-//        
-//        let newSong = {
-//            'title': {songTitle},
-//            'album': {songAlbum},
-//            'artist': {songArtist},
-//            'genre': {songGenre},
-//            'releaseDate': {songReleaseDate}
-//        }
-//        props.handleAddSong(newSong);
-//    }
-
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');

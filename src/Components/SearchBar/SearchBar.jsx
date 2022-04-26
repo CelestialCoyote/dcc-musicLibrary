@@ -3,9 +3,9 @@ import React from 'react';
 
 const SearchBar = (props) => {
 
-    let searchString = React.createRef();  // React use ref to get input value
+    let searchString = React.createRef();
 
-    const startSearch = () => {
+    const startSearch = (event) => {
         props.handleSearch(searchString.current.value);
     };
 
